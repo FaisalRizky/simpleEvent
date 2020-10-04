@@ -60,3 +60,6 @@ Get transacation Detail {{hosts}}/api/transaction/get_info/1
 -  Laravel 7.24
 -  Mysql 5.7
 -  Postman Chrome Extension Version 5.5.5
+
+### Aditional Info
+- {{hosts}} = http://localhost:8000
