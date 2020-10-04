@@ -1,0 +1,211 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Ticket",
+		"_postman_id": "62f2f5c3-a320-35da-d56e-e55bd8862d4f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Location",
+			"request": {
+				"url": "{{hosts}}/api/location/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "location_detail",
+							"value": "Tebet Barat",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "id_city",
+							"value": "18",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event",
+			"request": {
+				"url": "{{hosts}}/api/event/create",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Student National Seminar Oktober 2020",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "id_location",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Seminar Nasional Seminar Oktober 2020",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ticket_sale_open",
+							"value": "2020-10-04 10:50",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ticket_sale_close",
+							"value": "2020-10-07 10:50",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "event_open_time",
+							"value": "2020-10-12 10:20",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "event_close_time",
+							"value": "2020-10-14 10:20",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "event_image",
+							"description": "",
+							"type": "file",
+							"src": "myw3schoolsimage.jpg"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket",
+			"request": {
+				"url": "{{hosts}}/api/ticket/create",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_event",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Second Grade",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "100000",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "quote",
+							"value": "50",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event Info",
+			"request": {
+				"url": "{{hosts}}/api/event/get_info/3",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_user",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "id_event",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "tickets",
+							"value": "",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase Ticket",
+			"request": {
+				"url": "{{hosts}}/api/transaction/purchase",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id_user\" : 3,\n\t\"id_event\": 1,\n\t\"tickets\" :[\n\t\t{\n\t\t\t\"ticket_id\":1,\n\t\t\t\"quote\" :10\n\t\t},\n\t\t{\n\t\t\t\"ticket_id\":2,\n\t\t\t\"quote\" :10\n\t\t},\n\t\t{\n\t\t\t\"ticket_id\":2,\n\t\t\t\"quote\" :10\n\t\t},\n\t\t{\n\t\t\t\"ticket_id\":3,\n\t\t\t\"quote\" :10\n\t\t},\n\t\t{\n\t\t\t\"ticket_id\":1,\n\t\t\t\"quote\" :10\n\t\t}\n\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detail Transaction",
+			"request": {
+				"url": "{{hosts}}/api/transaction/get_info/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
