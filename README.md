@@ -64,3 +64,4 @@ Get transacation Detail {{hosts}}/api/transaction/get_info/1
 ### Aditional Info
 - {{hosts}} = http://localhost:8000
 - Request Example image. public/example/
+- If Ticket out stock when purchase please check available stock on spesific ticket in ticket table
