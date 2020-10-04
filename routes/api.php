@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('location/create','LocationController@create');
 Route::post('event/create','EventController@create');
 Route::get('event/get_info/{id}','EventController@getEvent');
+Route::get('transaction/get_info/{id}','TransactionController@getInfo');
 Route::post('transaction/purchase','TransactionController@purchase');
 Route::post('ticket/create','TicketController@create');

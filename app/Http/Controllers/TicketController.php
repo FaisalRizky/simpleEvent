@@ -21,6 +21,7 @@ class TicketController extends Controller
         if ($validator->fails()) {
             return parent::raiseError('400', $validator->messages());
         }
+        $request['available_stock'] = $request->quote;
         Ticket::insert($request->all());
         return parent::sendResponse([
             "success_code"       => "200",
